@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Getaway_LevelBuilder.jnlp">
+  <information>
+    <title>Getaway_LevelBuilder</title>
+    <vendor>maike_000</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Getaway_LevelBuilder.jar" size="10084" download="eager" />
+    <jar href="lib/GetawayShared.jar" size="109315" download="eager" />
+    <jar href="lib/JavaUtilExtra.jar" size="11090" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Getaway_LevelBuilder" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="getaway_levelbuilder.Getaway_LevelBuilder"  name="Getaway_LevelBuilder" />
+  <update check="always"/>
+</jnlp>

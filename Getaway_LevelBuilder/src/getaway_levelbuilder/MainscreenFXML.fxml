@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="563.0" prefWidth="789.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="getaway_levelbuilder.MainscreenFXMLController">
+  <children>
+    <Accordion layoutY="25.0" />
+    <MenuBar prefHeight="25.0" prefWidth="789.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#saveXMLFile" text="Save XML" fx:id="saveXMLButton" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <TabPane fx:id="tabPane" layoutY="25.0" prefHeight="546.0" prefWidth="789.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab fx:id="levelTab" text="Level">
+          <content>
+            <AnchorPane fx:id="levelPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Text layoutX="310.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level properties">
+                  <font>
+                    <Font size="24.0" fx:id="x1" />
+                  </font>
+                </Text>
+                <TextField fx:id="levelNameTextField" alignment="CENTER" layoutX="319.0" layoutY="71.0" />
+                <Text layoutX="364.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level name" />
+                <Text layoutX="355.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level difficulty" />
+                <Text layoutX="370.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max time" />
+                <Button fx:id="createLevelButton" layoutX="354.0" layoutY="259.0" mnemonicParsing="false" onAction="#createLevelButtonClick" text="Create level" />
+                <TextField fx:id="levelMinutesTextField" alignment="CENTER" layoutX="319.0" layoutY="177.0" prefHeight="25.0" prefWidth="71.0" promptText="Minutes" />
+                <TextField fx:id="levelSecondsTextField" alignment="CENTER" layoutX="397.0" layoutY="177.0" prefHeight="25.0" prefWidth="71.0" promptText="Seconds" />
+                <VBox alignment="CENTER" layoutY="294.0" prefHeight="25.0" prefWidth="789.0">
+                  <children>
+                    <Text fx:id="levelErrorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  </children>
+                </VBox>
+                <ChoiceBox fx:id="levelDifficultyChoiceBox" layoutX="319.0" layoutY="124.0" prefWidth="150.0" />
+                <Text layoutX="368.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room size" />
+                <TextField fx:id="levelSizeTextbox" alignment="CENTER" layoutX="319.0" layoutY="226.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="roomsTab" disable="true" text="Rooms">
+          <content>
+            <AnchorPane fx:id="roomsPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Text font="$x1" layoutX="358.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rooms" />
+                <ListView fx:id="gameobjectListRoom1" layoutX="285.0" layoutY="71.0" prefHeight="205.0" prefWidth="219.0" />
+                <Text layoutX="338.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gameobjects Room 1" />
+                <ListView fx:id="gameobjectListRoom2" layoutX="285.0" layoutY="299.0" prefHeight="204.0" prefWidth="219.0" />
+                <Text layoutX="338.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gameobjects Room 2" />
+                <Text layoutX="93.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Gameobject" />
+                <Text layoutX="112.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room 1">
+                  <font>
+                    <Font size="20.0" fx:id="x2" />
+                  </font>
+                </Text>
+                <Text font="$x2" layoutX="609.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room 2" />
+                <Text layoutX="590.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Gameobject" />
+                <TextField fx:id="targetGameobjectIDRoom1" layoutX="128.0" layoutY="329.0" />
+                <Text layoutX="13.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Target GameobjectID" />
+                <Button fx:id="addGameobjectButtonRoom1" layoutX="82.0" layoutY="422.0" mnemonicParsing="false" onAction="#addGameObjectRoom" prefHeight="25.0" prefWidth="129.0" text="Add Gameobject" />
+                <Button fx:id="addGameobjectButtonRoom2" layoutX="591.0" layoutY="422.0" mnemonicParsing="false" onAction="#addGameObjectRoom" prefHeight="25.0" prefWidth="128.0" text="Add Gameobject" />
+                <Text layoutX="511.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Target GameobjectID" />
+                <TextField fx:id="targetGameobjectIDRoom2" layoutX="626.0" layoutY="329.0" />
+                <Text layoutX="14.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates" />
+                <TextField fx:id="xPositionTextFieldRoom1" alignment="CENTER" layoutX="127.0" layoutY="177.0" prefHeight="25.0" prefWidth="71.0" promptText="X" />
+                <TextField fx:id="yPositionTextFieldRoom1" alignment="CENTER" layoutX="206.0" layoutY="177.0" prefHeight="25.0" prefWidth="71.0" promptText="Y" />
+                <ChoiceBox fx:id="gameobjectPickerRoom1" layoutX="15.0" layoutY="118.0" prefHeight="25.0" prefWidth="262.0" />
+                <ChoiceBox fx:id="gameobjectPickerRoom2" layoutX="514.0" layoutY="118.0" prefHeight="25.0" prefWidth="260.0" />
+                <TextField fx:id="yPositionTextFieldRoom2" alignment="CENTER" layoutX="702.0" layoutY="177.0" prefHeight="25.0" prefWidth="71.0" promptText="Y" />
+                <TextField fx:id="xPositionTextFieldRoom2" alignment="CENTER" layoutX="625.0" layoutY="177.0" prefHeight="25.0" prefWidth="71.0" promptText="X" />
+                <Text layoutX="514.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coordinates" />
+                <VBox alignment="CENTER" layoutX="3.0" layoutY="478.0" prefHeight="25.0" prefWidth="286.0">
+                  <children>
+                    <Text fx:id="room1ErrorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  </children>
+                </VBox>
+                <VBox alignment="CENTER" layoutX="503.0" layoutY="478.0" prefHeight="25.0" prefWidth="283.0">
+                  <children>
+                    <Text fx:id="room2ErrorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  </children>
+                </VBox>
+                <Text layoutX="182.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General" />
+                <Text layoutX="14.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Is solid / is closed" />
+                <ChoiceBox fx:id="gameObjectSolidRoom1" layoutX="127.0" layoutY="209.0" prefWidth="150.0" />
+                <Text layoutX="161.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Containers only" />
+                <Text layoutX="678.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General" />
+                <Text layoutX="655.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Containers only" />
+                <ChoiceBox fx:id="gameObjectSolidRoom2" layoutX="625.0" layoutY="209.0" prefWidth="150.0" />
+                <Text layoutX="514.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Is solid / is closed" />
+                <ChoiceBox fx:id="lootObjectRoom1" layoutX="127.0" layoutY="254.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="lootObjectRoom2" layoutX="625.0" layoutY="254.0" prefWidth="150.0" />
+                <Text layoutX="14.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loot object" />
+                <Text layoutX="512.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loot object" />
+                <Text layoutX="13.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unlock tool" />
+                <Text layoutX="511.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unlock tool" />
+                <Text layoutX="170.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Containers /" />
+                <Text layoutX="142.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Levers / Pressureplates" />
+                <Text layoutX="638.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Levers / Pressureplates" />
+                <ChoiceBox fx:id="gameObjectActivatedRoom1" layoutX="128.0" layoutY="386.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="gameObjectActivatedRoom2" layoutX="626.0" layoutY="386.0" prefWidth="150.0" />
+                <Text layoutX="37.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activated /" />
+                <Text layoutX="165.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Levers / Tools" />
+                <Text layoutX="37.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="breakable" />
+                <Text layoutX="661.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Levers / Tools" />
+                <Text layoutX="668.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Containers /" />
+                <Text layoutX="535.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="breakable" />
+                <Text layoutX="534.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activated /" />
+                <ChoiceBox fx:id="unlockToolRoom1" layoutX="127.0" layoutY="286.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="unlockToolRoom2" layoutX="625.0" layoutY="285.0" prefWidth="150.0" />
+                <Text fx:id="roomSizeText" layoutX="13.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                  <font>
+                    <Font size="13.0" />
+                  </font>
+                </Text>
+                <Text fx:id="levelSavedText" fill="#009712" layoutX="579.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level Saved!" visible="false">
+                  <font>
+                    <Font name="System Bold" size="22.0" />
+                  </font>
+                </Text>
+                <Button fx:id="removeGameobjectButtonRoom1" layoutX="82.0" layoutY="453.0" mnemonicParsing="false" onAction="#removeGameObjectRoom" prefHeight="25.0" prefWidth="129.0" text="Remove Gameobject" />
+                <Button fx:id="removeGameobjectButtonRoom2" layoutX="591.0" layoutY="453.0" mnemonicParsing="false" onAction="#removeGameObjectRoom" prefHeight="25.0" prefWidth="129.0" text="Remove Gameobject" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
